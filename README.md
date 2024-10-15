@@ -6,15 +6,18 @@ This app is a simple Student Information Management System using Next.JS
 Users can view, add, edit and delete student records.
 
 ## GETTING STARTED
-To run this app on your local machine clone this repo
+To run this app on your local machine clone this repo, cd into the cloned folder and install all packages with yarn or npm
 
-cd into the cloned folder and install all packages with yarn or npm
+    git clone this repo
+    cd repo
+    yarn or npm install
+
 This app used NEXT.JS to write .json file to your file system to store the student records
 
-### ONlINE URL
+### Live url
     https://sims-timiambaye.netlify.app
 
-### AUTHENTICATION
+### Authentication
     No Authentication is required to use this app
 
 ## ERRORS 
