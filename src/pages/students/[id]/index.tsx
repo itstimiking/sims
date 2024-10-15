@@ -7,7 +7,6 @@ const Details = ({student}:{student:Student}) => {
   const [data,setData] = useState<Student>()
 
   useEffect(()=>{
-    console.log(student,"::::::::; student data ::::::")
     if(student){
       setData(student)
     }
@@ -44,23 +43,11 @@ export default Details
 
 export async function getServerSideProps(context:any) {
   const id = context.params.id
-  const student = studentsDb.getById(id)
-
-
- 
+  const student = studentsDb.getById(id.toString())
+  console.log(student,"::::::::: student data :::::::::::::::")
   return {
     props: {
-      student,
+      student: student ? student : null,
     }
   }
 }
-
-
-// export async function getStaticPaths() {
-//   const students = studentsDb.getAll()
-//   const paths = students.map((student) => ({
-//     params: { id: student.id },
-//   }))
-
-//   return { paths, fallback: 'blocking' }
-// }

@@ -1,4 +1,8 @@
 const fs = require('fs');
+const fsPromises =require('fs/promises')
+import path from 'path';
+
+const dataFilePath = path.join(process.cwd(), 'students.json');
 
 type Student = {
     id: string
@@ -14,27 +18,21 @@ type Student = {
 let students: Student[] = require('./students.json');
 
 export const studentsDb = {
-    getAll: () => students,
-    getById: (id: string) => students.find(x=> x.id.toString() === id ),
-    find: (id: string) => students.find(x=> x.id.toString() === id ),
+    getById: (id: string) => students.find(x=> x.id == id),
+    find: (id: string) => students.find(x=> x.id == id ),
+    getAll: ()=>require('./students.json'),
     create,
     update,
     delete: _delete
 };
 
 async function create(student: Student) {
-    student.id = students.length ? (Math.max(...students.map(x => parseInt(x.id))) + 1).toString() : '1';
-
+    let id = students.length ? Math.max(...students.map(x => parseInt(x.id)))+ + 1 : 1;
+    student.id = id.toString()
     student.createdAt = new Date().toISOString();
     student.updatedAt = new Date().toISOString();
     students.push(student);
-    try{
-        await saveData();
-        return {error:false, data:student}
-    }catch(err){
-        console.log(err,":::: error creating student :::::")
-        return {error:true}
-    }
+    return {error:false, data:student}
 }
 
 async function update(id:number, params:Student) {
@@ -53,7 +51,7 @@ async function update(id:number, params:Student) {
 async function _delete(id:string) {
     const student = studentsDb.find(id)
     if(student){
-        students = students.filter(x => x.id.toString() !== id.toString());
+        const data = students.filter(x => x.id.toString() !== id.toString());
         await saveData();
     }else{
         return {error:true,message:'Student not found'}
@@ -61,5 +59,6 @@ async function _delete(id:string) {
 }
 
 async function saveData() {
-    fs.writeFileSync('students.json', JSON.stringify(students, null, 4));
+    fs.writeFileSync('./students.json', JSON.stringify(students,null,4));
+    // await fsPromises.writeFile(dataFilePath, JSON.stringify(students));
 }

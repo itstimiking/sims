@@ -5,12 +5,12 @@ import axios from 'axios'
 import React, { useEffect, useRef, useState } from 'react'
 
 const New = () => {
-    const nameRef:any = useRef()
-    const majorRef:any = useRef()
-    const regNumRef:any = useRef()
-    const dobRef:any = useRef()
-    const gpaRef:any = useRef()
-    const formRef:any = useRef()
+    const nameRef: any = useRef()
+    const majorRef: any = useRef()
+    const regNumRef: any = useRef()
+    const dobRef: any = useRef()
+    const gpaRef: any = useRef()
+    const formRef: any = useRef()
 
     const [loading, setLoading] = useState(false)
     const [message, setMessage] = useState(false)
@@ -18,63 +18,79 @@ const New = () => {
 
     const addStudent = async (e: any) => {
         e.preventDefault()
-        if([
-            nameRef, majorRef, regNumRef,dobRef,gpaRef
-        ].every(el=>el.current.value)){
+        if ([
+            nameRef, majorRef, regNumRef, dobRef, gpaRef
+        ].every(el => el.current.value)) {
             setLoading(true)
-        const res = await axios({
-            url: '/api/students',
-            method: 'POST',
-            data: {
-                name: nameRef.current?.value,
-                dob: dobRef.current?.value,
-                registrationNumber: regNumRef.current?.value,
-                major: majorRef.current?.value,
-                gpa: parseFloat(gpaRef.current?.value)
+            try {
+                const res = await axios({
+                    url: '/api/students',
+                    method: 'POST',
+                    data: {
+                        name: nameRef.current?.value,
+                        dob: dobRef.current?.value,
+                        registrationNumber: regNumRef.current?.value,
+                        major: majorRef.current?.value,
+                        gpa: parseFloat(gpaRef.current?.value)
+                    }
+                })
+                console.log(res.data, ":::: post response :::::")
+                if (!res.data.error) {
+                    setMessage(res.data.message)
+                    if (formRef) {
+                        formRef?.current.reset()
+                    }
+                } else {
+                    setError(true)
+                    setMessage(res.data.message)
+                }
+            } catch (err:any) {
+                console.log(err, ":::: error ::::")
+                setError(true)
+                setMessage(err?.message)
             }
-        })
-        console.log(res.data, ":::: post response :::::")
-        if(!res.data.error){
-            setMessage(res.data.message)
-        }else{
-            setError(true)
-            setMessage(res.data.message)
-        }
-        
-        if(formRef){
-            formRef?.current.reset()
-        }
 
-        setLoading(false)
+            setLoading(false)
         }
     }
 
-    useEffect(()=>{
-        setTimeout(()=>{
+    useEffect(() => {
+        const time = setTimeout(() => {
             setError(false)
             setMessage(false)
-        },3000)
-    },[message])
+        }, 5000)
+        return ()=>clearTimeout(time)
+    }, [message])
 
     return (
-        <div className='flex justify-center items-center pt-20 relative z-0'>
-            <div
-                className={
-                    `w-11/12 sm:w-10/12 md:3/5 min-h-96 relative z-10
-                shadow-lg border border-gray-200 rounded-lg p-5 md:p-10`
-                }
-            >
-                <div>
-                    {error && 
+        <div className='flex flex-col justify-center items-center relative z-0 w-screen'>
+            <div className='w-11/12 sm:w-10/12 md:3/5'>
+                <span>
+                    Fill the form bellow to enter new student information
+                </span>
+            </div>
+            <div className='flex min-w-60 h-10'>
+                {error &&
                     <span className='text-red-500'>
                         {message}
-                    </span>}
+                    </span>
+                }
 
-                    {!error && message && 
+                {!error && message &&
                     <span className='text-green-500'>
                         {message}
-                    </span>}
-                </div>
+                    </span>
+                }
+            </div>
+            <div
+                className={
+                    `
+                    w-11/12 sm:w-10/12 md:3/5 min-h-96 relative z-10
+                    shadow-lg border border-gray-200 rounded-lg p-5 md:p-10
+                    `
+                }
+            >
+
                 <form className='flex flex-col gap-5' onSubmit={addStudent} ref={formRef}>
                     <div className='flex columns-1 md:columns-2 gap-5 h-full w-full relative'>
                         <div className='flex relative flex-col w-full gap-1'>
