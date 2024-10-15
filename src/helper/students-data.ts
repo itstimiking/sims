@@ -15,7 +15,7 @@ let students: Student[] = require('./students.json');
 
 export const studentsDb = {
     getAll: () => students,
-    getById: async (id: string) => students.find(x=> x.id.toString() === id ),
+    getById: (id: string) => students.find(x=> x.id.toString() === id ),
     find: (id: string) => students.find(x=> x.id.toString() === id ),
     create,
     update,
