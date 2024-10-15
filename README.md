@@ -11,10 +11,10 @@ To run this app on your local machine clone this repo
 cd into the cloned folder and install all packages with yarn or npm
 This app used NEXT.JS to write .json file to your file system to store the student records
 
-ONlINE URL
+### ONlINE URL
     https://sims-timiambaye.netlify.app
 
-AUTHENTICATION
+### AUTHENTICATION
     No Authentication is required to use this app
 
 ## ERRORS 
