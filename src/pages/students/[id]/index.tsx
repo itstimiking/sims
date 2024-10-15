@@ -42,7 +42,7 @@ const Details = ({student}:{student:Student}) => {
 
 export default Details
 
-export async function getStaticProps(context:any) {
+export async function getServerSideProps(context:any) {
   const id = context.params.id
   const student = studentsDb.getById(id)
 
@@ -51,17 +51,16 @@ export async function getStaticProps(context:any) {
   return {
     props: {
       student,
-    },
-    revalidate: 10, // In seconds
+    }
   }
 }
 
 
-export async function getStaticPaths() {
-  const students = studentsDb.getAll()
-  const paths = students.map((student) => ({
-    params: { id: student.id },
-  }))
+// export async function getStaticPaths() {
+//   const students = studentsDb.getAll()
+//   const paths = students.map((student) => ({
+//     params: { id: student.id },
+//   }))
 
-  return { paths, fallback: 'blocking' }
-}
+//   return { paths, fallback: 'blocking' }
+// }
