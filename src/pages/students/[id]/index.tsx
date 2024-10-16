@@ -42,6 +42,14 @@ const Details = ({ student }: { student: Student }) => {
           </button>
         </div>
 
+        <div className='flex flex-1 items-center flex-col justify-center'>
+          <span className='text-3xl font-bold'> {data?.name} </span>
+          <span className='font-bold'> Majors in: {data?.major} </span>
+          <span className='font-bold'>Date of Birth: {data?.dob} </span>
+          <span className='font-bold'>Registration Number: {data?.registrationNumber} </span>
+          <span className='font-bold'>G.P.A {data?.gpa} </span>
+        </div>
+
       </div>
 
     </div>
