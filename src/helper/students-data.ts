@@ -31,7 +31,7 @@ async function create(student: Student) {
     student.id = id.toString()
     student.createdAt = new Date().toISOString();
     student.updatedAt = new Date().toISOString();
-    students.push(student);
+    students.unshift(student);
     return {error:false, data:student}
 }
 
