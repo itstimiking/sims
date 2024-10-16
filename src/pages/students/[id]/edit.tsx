@@ -21,8 +21,8 @@ const Edit = ({ student }: { student: Student }) => {
       setLoading(true)
       try {
         const res = await axios({
-          url: '/api/students',
-          method: 'POST',
+          url: '/api/students/'+ student.id,
+          method: 'PUT',
           data: { ...data, gpa: parseFloat(data.gpa as string) }
         })
         console.log(res.data, ":::: post response :::::")
@@ -93,6 +93,7 @@ const Edit = ({ student }: { student: Student }) => {
           loading={loading} 
           ref={formRef} 
           data={student}
+          buttonText='Update Information'
         />
 
       </div>

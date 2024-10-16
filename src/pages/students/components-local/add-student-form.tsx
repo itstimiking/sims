@@ -2,7 +2,7 @@ import CustomInput from '@/components-global/form-elements/custom-input'
 import { Student } from '@/helper/types'
 import React, { forwardRef } from 'react'
 
-const AddStudentForm = ({onSubmit,loading,data}:{onSubmit:any,loading?:boolean,data?:Student},ref:any) => {
+const AddStudentForm = ({onSubmit,loading,data,buttonText}:{onSubmit:any,loading?:boolean,data?:Student,buttonText?:string},ref:any) => {
     return (
         <form className='flex flex-col gap-5' onSubmit={onSubmit} ref={ref}>
             <div className='flex columns-1 md:columns-2 gap-5 h-full w-full relative'>
@@ -47,7 +47,7 @@ const AddStudentForm = ({onSubmit,loading,data}:{onSubmit:any,loading?:boolean,d
             <div>
                 <button type='submit' disabled={loading} className='bg-blue-500 rounded p-2 text-white' >
                     <span>
-                        Add Student
+                        {buttonText ? buttonText : "Add Student"}
                     </span>
                     {loading && <span className=' animate-pulse'>...</span>}
                 </button>

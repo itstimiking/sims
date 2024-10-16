@@ -14,7 +14,7 @@ const Details = ({ student }: { student: Student }) => {
   const deleteStudent =async (id:string)=>{
     setLoading(true)
     const res = await axios({
-      url:'/students/' + id,
+      url:'/api/students/' + id,
       method:'DELETE'
     })
     console.log(res.data)
@@ -27,7 +27,7 @@ const Details = ({ student }: { student: Student }) => {
       setData(student)
     }
   }, [student])
-  
+
   return (
     <div className='flex flex-col gap-5 w-screen justify-center items-center'>
       <div className='flex justify-between min-w-40'>

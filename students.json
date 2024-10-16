@@ -1,12 +1,292 @@
 [
     {
-        "name": "Timi Ambaye",
-        "dob": "2024-10-03",
-        "registrationNumber": "98798789",
-        "major": "Computer Science",
-        "gpa": 1,
-        "id": "1",
-        "createdAt": "2024-10-15T22:58:58.613Z",
-        "updatedAt": "2024-10-15T22:58:58.613Z"
+        "id": 2,
+        "name": "Diena Hazle",
+        "major": "Geologist IV",
+        "registrationNumber": "36987-3068",
+        "dob": "7/7/2024",
+        "gpa": 3,
+        "createdAt": "4/26/2024",
+        "updatedAt": "12/2/2023"
+    },
+    {
+        "id": 3,
+        "name": "Beverly Vogt",
+        "major": "VP Accounting",
+        "registrationNumber": "50114-7070",
+        "dob": "11/26/2023",
+        "gpa": 82,
+        "createdAt": "8/7/2024",
+        "updatedAt": "12/10/2023"
+    },
+    {
+        "id": 4,
+        "name": "Herc Savil",
+        "major": "Database Administrator I",
+        "registrationNumber": "0781-6135",
+        "dob": "5/2/2024",
+        "gpa": 81,
+        "createdAt": "2/17/2024",
+        "updatedAt": "8/16/2024"
+    },
+    {
+        "id": 5,
+        "name": "Griff Daenen",
+        "major": "Biostatistician IV",
+        "registrationNumber": "68258-2012",
+        "dob": "12/2/2023",
+        "gpa": 56,
+        "createdAt": "2/29/2024",
+        "updatedAt": "7/26/2024"
+    },
+    {
+        "id": 6,
+        "name": "Coralyn Edmondson",
+        "major": "Structural Analysis Engineer",
+        "registrationNumber": "55714-4612",
+        "dob": "10/1/2024",
+        "gpa": 42,
+        "createdAt": "6/1/2024",
+        "updatedAt": "11/18/2023"
+    },
+    {
+        "id": 7,
+        "name": "Concettina Rogan",
+        "major": "Human Resources Assistant I",
+        "registrationNumber": "51815-223",
+        "dob": "12/14/2023",
+        "gpa": 71,
+        "createdAt": "2/17/2024",
+        "updatedAt": "11/25/2023"
+    },
+    {
+        "id": 8,
+        "name": "Giraldo Piesold",
+        "major": "Electrical Engineer",
+        "registrationNumber": "55648-992",
+        "dob": "2/28/2024",
+        "gpa": 54,
+        "createdAt": "3/30/2024",
+        "updatedAt": "4/22/2024"
+    },
+    {
+        "id": 9,
+        "name": "Leland Seaward",
+        "major": "Product Engineer",
+        "registrationNumber": "16714-332",
+        "dob": "2/5/2024",
+        "gpa": 63,
+        "createdAt": "12/3/2023",
+        "updatedAt": "7/26/2024"
+    },
+    {
+        "id": 10,
+        "name": "Cristal Creeboe",
+        "major": "Staff Scientist",
+        "registrationNumber": "65044-3173",
+        "dob": "4/5/2024",
+        "gpa": 14,
+        "createdAt": "4/2/2024",
+        "updatedAt": "6/3/2024"
+    },
+    {
+        "id": 11,
+        "name": "Marlin Critten",
+        "major": "Director of Sales",
+        "registrationNumber": "0713-0536",
+        "dob": "1/1/2024",
+        "gpa": 53,
+        "createdAt": "4/2/2024",
+        "updatedAt": "12/21/2023"
+    },
+    {
+        "id": 12,
+        "name": "Gris Roscam",
+        "major": "General Manager",
+        "registrationNumber": "42291-722",
+        "dob": "3/27/2024",
+        "gpa": 95,
+        "createdAt": "9/26/2024",
+        "updatedAt": "5/13/2024"
+    },
+    {
+        "id": 13,
+        "name": "Kailey Lusher",
+        "major": "Quality Control Specialist",
+        "registrationNumber": "42743-4700",
+        "dob": "10/7/2024",
+        "gpa": 54,
+        "createdAt": "8/18/2024",
+        "updatedAt": "1/22/2024"
+    },
+    {
+        "id": 14,
+        "name": "Armando Hodgen",
+        "major": "Software Consultant",
+        "registrationNumber": "52342-001",
+        "dob": "4/13/2024",
+        "gpa": 79,
+        "createdAt": "11/5/2023",
+        "updatedAt": "3/10/2024"
+    },
+    {
+        "id": 15,
+        "name": "Burlie Linnit",
+        "major": "Senior Sales Associate",
+        "registrationNumber": "68084-571",
+        "dob": "6/23/2024",
+        "gpa": 18,
+        "createdAt": "8/17/2024",
+        "updatedAt": "8/31/2024"
+    },
+    {
+        "id": 16,
+        "name": "Nancee MacDougall",
+        "major": "Speech Pathologist",
+        "registrationNumber": "24236-776",
+        "dob": "4/18/2024",
+        "gpa": 56,
+        "createdAt": "4/30/2024",
+        "updatedAt": "4/6/2024"
+    },
+    {
+        "id": 17,
+        "name": "Isabel Weldrick",
+        "major": "Nurse",
+        "registrationNumber": "61245-175",
+        "dob": "4/12/2024",
+        "gpa": 58,
+        "createdAt": "3/19/2024",
+        "updatedAt": "2/16/2024"
+    },
+    {
+        "id": 18,
+        "name": "Vite Dykins",
+        "major": "Statistician IV",
+        "registrationNumber": "43063-218",
+        "dob": "4/14/2024",
+        "gpa": 6,
+        "createdAt": "6/15/2024",
+        "updatedAt": "1/26/2024"
+    },
+    {
+        "id": 19,
+        "name": "Liz Dmitrievski",
+        "major": "Information Systems Manager",
+        "registrationNumber": "11673-479",
+        "dob": "3/9/2024",
+        "gpa": 55,
+        "createdAt": "7/13/2024",
+        "updatedAt": "5/3/2024"
+    },
+    {
+        "id": 20,
+        "name": "Royall Grenshiels",
+        "major": "Software Consultant",
+        "registrationNumber": "0280-1126",
+        "dob": "9/10/2024",
+        "gpa": 70,
+        "createdAt": "6/5/2024",
+        "updatedAt": "4/24/2024"
+    },
+    {
+        "id": 21,
+        "name": "Bianca Pusey",
+        "major": "Research Associate",
+        "registrationNumber": "51224-202",
+        "dob": "2/9/2024",
+        "gpa": 79,
+        "createdAt": "1/10/2024",
+        "updatedAt": "6/29/2024"
+    },
+    {
+        "id": 22,
+        "name": "Jamill Salvadore",
+        "major": "Registered Nurse",
+        "registrationNumber": "0179-0063",
+        "dob": "4/23/2024",
+        "gpa": 61,
+        "createdAt": "1/26/2024",
+        "updatedAt": "4/17/2024"
+    },
+    {
+        "id": 23,
+        "name": "Albert Kohring",
+        "major": "Tax Accountant",
+        "registrationNumber": "51346-253",
+        "dob": "5/18/2024",
+        "gpa": 60,
+        "createdAt": "11/27/2023",
+        "updatedAt": "9/13/2024"
+    },
+    {
+        "id": 24,
+        "name": "Remington Beere",
+        "major": "VP Accounting",
+        "registrationNumber": "43063-517",
+        "dob": "7/21/2024",
+        "gpa": 9,
+        "createdAt": "6/27/2024",
+        "updatedAt": "6/20/2024"
+    },
+    {
+        "id": 25,
+        "name": "Christine Rawsen",
+        "major": "GIS Technical Architect",
+        "registrationNumber": "0093-8120",
+        "dob": "4/3/2024",
+        "gpa": 75,
+        "createdAt": "8/27/2024",
+        "updatedAt": "7/16/2024"
+    },
+    {
+        "id": 26,
+        "name": "Renaud Crummey",
+        "major": "Assistant Manager",
+        "registrationNumber": "67345-6088",
+        "dob": "4/19/2024",
+        "gpa": 38,
+        "createdAt": "11/2/2023",
+        "updatedAt": "4/25/2024"
+    },
+    {
+        "id": 27,
+        "name": "Terrel Gildroy",
+        "major": "Electrical Engineer",
+        "registrationNumber": "54569-3403",
+        "dob": "5/30/2024",
+        "gpa": 98,
+        "createdAt": "7/18/2024",
+        "updatedAt": "10/6/2024"
+    },
+    {
+        "id": 28,
+        "name": "Jorrie Messent",
+        "major": "Quality Engineer",
+        "registrationNumber": "54868-6360",
+        "dob": "4/10/2024",
+        "gpa": 54,
+        "createdAt": "3/30/2024",
+        "updatedAt": "6/11/2024"
+    },
+    {
+        "id": 29,
+        "name": "Elston Dibson",
+        "major": "Physical Therapy Assistant",
+        "registrationNumber": "57664-634",
+        "dob": "10/7/2024",
+        "gpa": 58,
+        "createdAt": "11/6/2023",
+        "updatedAt": "10/3/2024"
+    },
+    {
+        "id": 30,
+        "name": "Betta Lavrinov",
+        "major": "Senior Editor",
+        "registrationNumber": "0378-3025",
+        "dob": "2/23/2024",
+        "gpa": 56,
+        "createdAt": "10/24/2023",
+        "updatedAt": "7/15/2024"
     }
 ]
