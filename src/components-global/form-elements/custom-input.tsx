@@ -7,11 +7,12 @@ type Props={
     step?:string
     onChange?:(e:any)=>void
     placeholder?:string
+    defaultValue?: string 
     buttonType?: 'button' | 'submit' | 'reset'
 }
 
 const CustomInput = forwardRef<HTMLInputElement, Props>(
-    ({name,type,buttonType,step,onChange, ...props},
+    ({name,type,buttonType,step,defaultValue,onChange, ...props},
     ref
 ) => {
   return (
@@ -22,6 +23,7 @@ const CustomInput = forwardRef<HTMLInputElement, Props>(
         type={type ? type : 'text'}
         name={name}
         onChange={onChange}
+        defaultValue={defaultValue}
         required
         {...props}
     />

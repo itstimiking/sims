@@ -27,6 +27,7 @@ const Details = ({ student }: { student: Student }) => {
       setData(student)
     }
   }, [student])
+  
   return (
     <div className='flex flex-col gap-5 w-screen justify-center items-center'>
       <div className='flex justify-between min-w-40'>
