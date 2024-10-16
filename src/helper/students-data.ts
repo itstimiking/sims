@@ -51,10 +51,11 @@ async function update(id:number, params:Student) {
 async function _delete(id:string) {
     const student = studentsDb.find(id)
     if(student){
-        const data = students.filter(x => x.id.toString() !== id.toString());
+        students = students.filter(x => x.id.toString() !== id.toString());
         await saveData();
+        return 'Delete successful'
     }else{
-        return {error:true,message:'Student not found'}
+        return 'Student not found'
     }
 }
 

@@ -33,8 +33,16 @@ export default async function handler(
       res.status(500).json({ message: "Server error 500",error:true }); 
     }
   }if (req.method === 'DELETE') { // Delete request to delete student data
+    const {id} = req.query
     try{
-
+      if(typeof id == 'string'){
+        studentsDb.delete(id).then(response=>{
+          if(response){
+            console.log(response,"::::::: delete res ::::::::")
+            res.status(201).json({ message: "Success",error:false,data: response }); 
+          }
+        }).catch(err=>console.log(err,"::::: delete error ::::"))
+      }
     }catch(err){
       res.status(500).json({ message: "Server error 500",error:true }); 
     }

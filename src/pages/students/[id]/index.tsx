@@ -1,11 +1,26 @@
 import { studentsDb } from '@/helper/students-data'
 import { Student } from '@/helper/types'
 import { Link } from '@chakra-ui/react'
-import { useParams } from 'next/navigation'
+import axios from 'axios'
+import { useParams, useRouter } from 'next/navigation'
 import React, { useEffect, useState } from 'react'
 
 const Details = ({ student }: { student: Student }) => {
   const [data, setData] = useState<Student>()
+  const [loading, setLoading] = useState(false)
+
+  const router = useRouter()
+
+  const deleteStudent =async (id:string)=>{
+    setLoading(true)
+    const res = await axios({
+      url:'/students/' + id,
+      method:'DELETE'
+    })
+    console.log(res.data)
+    setLoading(false)
+    router.back()
+  }
 
   useEffect(() => {
     if (student) {
@@ -35,7 +50,11 @@ const Details = ({ student }: { student: Student }) => {
           </button>
           </Link>
 
-          <button type='submit' className='bg-red-500 rounded p-2 text-white' >
+          <button 
+            type='submit' 
+            className='bg-red-500 rounded p-2 text-white' 
+            onClick={()=>deleteStudent(data!.id)}
+          >
             <span>
               Delete
             </span>
@@ -61,7 +80,6 @@ export default Details
 export async function getServerSideProps(context: any) {
   const id = context.params.id
   const student = studentsDb.getById(id.toString())
-  console.log(student, "::::::::: student data :::::::::::::::")
   return {
     props: {
       student: student ? student : null,
