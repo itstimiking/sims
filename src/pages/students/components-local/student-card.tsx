@@ -10,11 +10,11 @@ const StudentCard: React.FC<Props> = ({data}) => {
     <div className='w-1/4 border rounded-lg shadow-lg border-gray-200 p-5 items-end'>
 
         <div className='flex flex-col'>
-            <Link color={'blue.500'} href={`/students/${data.id}`}>
-              <span className='text-lg font-semibold'>Name: {data.name}</span>
+            <Link color={'blue.500'} href={`/students/${data?.id}`}>
+              <span className='text-lg font-semibold'>Name: {data?.name}</span>
             </Link>
-            <span className='font-light'>Major: {data.major}</span>
-            <span className='text-xs font-light'>Reg Num: {data.registrationNumber}</span>
+            <span className='font-light'>Major: {data?.major}</span>
+            <span className='text-xs font-light'>Reg Num: {data?.registrationNumber}</span>
         </div>
 
     </div>

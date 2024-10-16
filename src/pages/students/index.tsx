@@ -43,7 +43,7 @@ const Students = () => {
       </div>
       <div className='flex gap-5 flex-wrap w-screen justify-center'>
         {Array.isArray(students) && students.map(el => (
-          <StudentCard data={el} key={el.id} />
+          <StudentCard data={el} key={el?.id} />
         ))}
         {error && <li>{errorMessage}</li>}
       </div>
