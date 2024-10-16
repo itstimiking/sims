@@ -8,7 +8,7 @@ type Data = {
   data?: any
 };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>,
 ) {
@@ -16,20 +16,15 @@ export default function handler(
     try{
       const { id } = req.query
       if(typeof id == 'string'){
-
-        studentsDb.getById(id).then(response=>{
+          let response = await studentsDb.getById(id)!
           if(response){
             res.status(200).json({ message: "Successful",error:false,data: response }); 
           }else{
-            throw response
+            throw new Error('Cant find user')
           }
-        }).catch(err=>{
-          console.log(err,":::: error getting user ::::")
-          throw err 
-        })
       }
-    }catch(err){
-      res.status(500).json({ message: "Server error 500",error:true,data: err }); 
+    }catch(err:any){
+      res.status(500).json({ message: "Server error 500",error:true,data: err.message }); 
     }
   }else if (req.method === 'PUT') { // Put request to edit student data
     try{
