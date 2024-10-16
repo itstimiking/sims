@@ -5,11 +5,13 @@ type Props={
     name:string
     type?: string
     step?:string
+    onChange?:(e:any)=>void
+    placeholder?:string
     buttonType?: 'button' | 'submit' | 'reset'
 }
 
 const CustomInput = forwardRef<HTMLInputElement, Props>(
-    ({name,type,buttonType,step, ...props},
+    ({name,type,buttonType,step,onChange, ...props},
     ref
 ) => {
   return (
@@ -19,6 +21,7 @@ const CustomInput = forwardRef<HTMLInputElement, Props>(
         className='w-full border border-gray-300 rounded-md h-16 relative z-30'
         type={type ? type : 'text'}
         name={name}
+        onChange={onChange}
         required
         {...props}
     />

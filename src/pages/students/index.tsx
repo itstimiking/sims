@@ -9,8 +9,13 @@ import CustomInput from '@/components-global/form-elements/custom-input'
 
 const Students = () => {
   const [students, setStudents] = useState<Student[]>([])
+  const [data, setData] = useState<Student[]>([])
   const [error, setError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+
+  const handleSearch = (queryString:any)=>{
+    setData(students.filter(el=>el.name.toLowerCase().includes(queryString?.target.value.toLowerCase())))
+  }
 
   const getAllStudents = async () => {
     const res: any = await axios('/api/students')
@@ -29,6 +34,10 @@ const Students = () => {
     }
   }, [])
 
+  useEffect(() => {
+    setData(students)
+  }, [students])
+
   return (
     <div className='flex flex-col gap-10 p-10 w-screen'>
       <div className='flex text-3xl font-bold w-full justify-center'>
@@ -38,12 +47,12 @@ const Students = () => {
       </div>
       <div className='flex justify-center'>
         <div className='flex w-1/2 justify-center'>
-          <CustomInput name='search' type='search' />
+          <CustomInput name='search' type='search' onChange={handleSearch} placeholder='Search Student Name' />
         </div>
       </div>
-      <div className='flex gap-5 flex-wrap w-screen justify-center'>
-        <div className='flex flex-wrap gap-2 justify-center'>
-          {Array.isArray(students) && students.map(el => (
+      <div className='flex w-screen justify-center'>
+        <div className='flex w-[90%] flex-wrap'>
+          {Array.isArray(data) && data.map(el => (
             <StudentCard data={el} key={el?.id} />
           ))}
           {error && <li>{errorMessage}</li>}
