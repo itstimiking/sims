@@ -7,7 +7,7 @@ type Props = {
 }
 const StudentCard: React.FC<Props> = ({data}) => {
   return (
-    <div className='w-1/4 h-60 border rounded-lg shadow-lg border-gray-200 p-5 items-end'>
+    <div className='w-1/4 border rounded-lg shadow-lg border-gray-200 p-5 items-end'>
 
         <div className='flex flex-col'>
             <Link color={'blue.500'} href={`/students/${data.id}`}>
